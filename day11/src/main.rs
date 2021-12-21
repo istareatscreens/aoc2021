@@ -1,5 +1,5 @@
 use log::debug;
-use std::{collections::HashMap, fmt::Octal, fs};
+use std::{collections::HashMap, fs};
 
 fn main() {
     simple_logger::init_with_level(log::Level::Info).unwrap();

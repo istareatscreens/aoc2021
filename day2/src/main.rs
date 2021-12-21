@@ -1,6 +1,7 @@
 use std::fs;
 //use std::vec::Vec;
 
+#[allow(clippy::all)]
 fn main() {
     // --snip--
     let data = fs::read_to_string("input.txt").expect("Unable to read file");

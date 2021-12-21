@@ -1,6 +1,7 @@
 use std::fs;
 use std::vec::Vec;
 
+#[allow(clippy::all)]
 fn main() {
     let data = fs::read_to_string("input.txt").expect("Unable to read file");
     //let data = fs::read_to_string("input.test.txt").expect("Unable to read file");
@@ -58,6 +59,7 @@ fn main() {
     println!("\n\n Result P2: {}\n\n", result);
 }
 
+#[allow(clippy::all)]
 fn find_sensor_reading<T, F>(numbers: Vec<String>, eval: T) -> usize
 where
     F: Fn(usize) -> bool,
@@ -90,6 +92,7 @@ where
     return 0;
 }
 
+#[allow(clippy::all)]
 fn get_bit_count(numbers: &Vec<String>) -> Vec<usize> {
     let mut bit_count: Vec<usize> = vec![0; numbers[0].len()];
     for number in numbers.iter() {
@@ -100,9 +103,10 @@ fn get_bit_count(numbers: &Vec<String>) -> Vec<usize> {
         }
     }
 
-    return bit_count;
+    bit_count
 }
 
+#[allow(clippy::all)]
 fn get_majority_bits(numbers: &Vec<String>, bit_count: &Vec<usize>) -> Vec<usize> {
     let mut majority_bit: Vec<usize> = vec![0; numbers[0].len()];
     for i in 0..bit_count.len() {
@@ -112,9 +116,10 @@ fn get_majority_bits(numbers: &Vec<String>, bit_count: &Vec<usize>) -> Vec<usize
             majority_bit[i] = 0;
         }
     }
-    return majority_bit;
+    majority_bit
 }
 
+#[allow(clippy::all)]
 fn get_valid_numbers<T>(numbers: &Vec<String>, index: usize, eval: T) -> Vec<String>
 where
     T: Fn(usize) -> bool,
@@ -127,9 +132,9 @@ where
         }
     }
 
-    return valid_numbers;
+    valid_numbers
 }
 
 fn bit_str_to_int(s: &str) -> usize {
-    return isize::from_str_radix(s, 2).unwrap() as usize;
+    isize::from_str_radix(s, 2).unwrap() as usize
 }

@@ -1,6 +1,7 @@
 use std::fs;
 use std::vec::Vec;
 
+#[allow(clippy::all)]
 fn main() {
     // --snip--
     let data = fs::read_to_string("i1.txt").expect("Unable to read file");
@@ -44,5 +45,5 @@ fn main() {
 }
 
 fn window(array: &mut Vec<i32>, index: usize) -> i32 {
-    return array[index] + array[index + 1] + array[index + 2];
+    array[index] + array[index + 1] + array[index + 2]
 }

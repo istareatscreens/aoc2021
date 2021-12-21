@@ -8,6 +8,7 @@ struct Board {
     pub winner: bool,
 }
 */
+#[allow(clippy::all)]
 fn main() {
     let data = fs::read_to_string("input.txt").expect("Unable to read file");
     //let data = fs::read_to_string("input.test.txt").expect("Unable to read file");
@@ -15,7 +16,7 @@ fn main() {
     let numbers: Vec<i32> = lines
         .next()
         .unwrap()
-        .split(",")
+        .split(',')
         .map(|a: &str| {
             a.to_string()
                 .parse::<i32>()
@@ -27,7 +28,7 @@ fn main() {
     let inner_hash: Vec<i32> = Vec::new();
 
     for line in lines {
-        if line == "" {
+        if line.is_empty() {
             boards.push(inner_hash.clone());
         } else {
             let last_index = boards.len() - 1;
@@ -140,5 +141,5 @@ fn board_has_bingo(board_marks: Vec<i32>) -> WinType {
         }
     }
 
-    return WinType::Null;
+    WinType::Null
 }
